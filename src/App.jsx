@@ -53,12 +53,12 @@ import React from 'react';
 
 const App = () => {
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="bg-gray-900 text-white max-h-screen">
       {/* Navigation */}
-      <header className="bg-gray-800">
+      <header className="bg-gray-500">
         <nav className="container mx-auto p-6 flex justify-between">
           <div className="text-white text-2xl font-bold">PROTOFILO.</div>
-          <ul className="flex space-x-8 text-gray-400">
+          <ul className="text-white flex space-x-8">
             <li><a href="#" className="hover:text-yellow-400">HOME</a></li>
             <li><a href="#" className="hover:text-gray-100">ABOUT</a></li>
             <li><a href="#" className="hover:text-gray-100">WORKS</a></li>
@@ -69,17 +69,17 @@ const App = () => {
       </header>
 
       {/* Main Section */}
-      <section className="flex items-center justify-center h-screen">
+      <section className="flex items-center justify-end h-screen">
         {/* Text Section (on the left) */}
-        <div className="mr-8 text-left">
-          <p className="text-gray-200 text-xl mb-4">MY NAME IS</p>
-          <h1 className="text-6xl font-bold mb-5 text-white">ABDULRAHMAN</h1>
-          <p className="bg-yellow-400 text-gray-900 font-bold text-xl py-2 px-4 inline-block">I'M A UI DEVELOPER</p>
+        <div className="text-left z-10 absolute top-21 left-20 p-14">
+          <h1 className="text-gray-200 mb-2 text-4xl">MY NAME IS</h1>
+          <h2 className="text-6xl font-bold mb-5 text-white">ABDULRAHMAN</h2>
+          <p className="bg-yellow-400 text-gray-900 font-bold text-4xl py-3 px-20 inline-block">I'M A UI DEVELOPER</p>
         </div>
 
         {/* Image Section (on the right) */}
         <div>
-          <img src="/images/img.avif" alt="Profile" className="w-md h-screen object-cover grayscale" />
+          <img src="/images/img1.avif" alt="Profile" className="w-md h-screen object-cover grayscale" />
         </div>
       </section>
     </div>
