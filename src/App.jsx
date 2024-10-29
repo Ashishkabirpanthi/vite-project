@@ -49,41 +49,247 @@
 //    );
 // }
 // export default App;
-import React from 'react';
+// 
 
-const App = () => {
-  return (
-    <div className="bg-gray-900 text-white max-h-screen">
-      {/* Navigation */}
-      <header className="bg-gray-500">
-        <nav className="container mx-auto p-6 flex justify-between">
-          <div className="text-white text-2xl font-bold">PROTOFILO.</div>
-          <ul className="text-white flex space-x-8">
-            <li><a href="#" className="hover:text-yellow-400">HOME</a></li>
-            <li><a href="#" className="hover:text-gray-100">ABOUT</a></li>
-            <li><a href="#" className="hover:text-gray-100">WORKS</a></li>
-            <li><a href="#" className="hover:text-gray-100">BLOG</a></li>
-            <li><a href="#" className="hover:text-gray-100">CONTACT</a></li>
-          </ul>
-        </nav>
-      </header>
+// import {useForm} from "react-hook-form";
 
-      {/* Main Section */}
-      <section className="flex items-center justify-end h-screen">
-        {/* Text Section (on the left) */}
-        <div className="text-left z-10 absolute top-21 left-20 p-14">
-          <h1 className="text-gray-200 mb-2 text-4xl">MY NAME IS</h1>
-          <h2 className="text-6xl font-bold mb-5 text-white">ABDULRAHMAN</h2>
-          <p className="bg-yellow-400 text-gray-900 font-bold text-4xl py-3 px-20 inline-block">I'M A UI DEVELOPER</p>
-        </div>
+// const App = () => {
 
-        {/* Image Section (on the right) */}
-        <div>
-          <img src="/images/img1.avif" alt="Profile" className="w-md h-screen object-cover grayscale" />
-        </div>
-      </section>
-    </div>
-  );
-};
+//   const { register, handleSubmit, formState: { errors } } = useForm();
 
-export default App;
+//   const submitHandler = (data) => {
+//     console.log(data);
+//   }
+
+//   console.log(errors)
+
+//   return(
+//     <div>
+//     <form onSubmit={handleSubmit(submitHandler)}>
+//       <input {...register('username',  { required: "This is required." }) } type="text" placeholder="username" />
+//       <br/>
+//       {errors.username && <p className="text-red-800">{errors.username.message}</p>}
+//       <button type="submit">Submit</button>
+//     </form>
+//     </div>
+//   )
+// };
+
+// export default App;
+
+// import React from 'react'
+// import { useState } from 'react'
+// import Navigation from './component/Navigations'
+// import Footer from './component/Footer'
+
+// const App = () => {
+
+//   const [nav, setnav] = useState("Nav | Navigation.jsx");
+//   const [footer, setfooter] = useState("Footer | Footer.jsx");
+//   return (
+//     <div>
+//       <h1>App</h1>
+//       <Navigation nav = {nav} setnav ={setnav}></Navigation>
+//       <Footer>
+//         {footer}
+//       </Footer>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// first class
+// import React from 'react'
+// import { useState } from 'react'
+
+// const App = () => {
+//   const [a,seta] = useState(12);
+// const counthandler = () => {
+//   seta(a + 1);
+// }
+// console.log(a);
+
+//   return (
+//     <>
+//     <h1>{a}</h1>
+//     <button className='bg-blue-800' onClick={counthandler}>click me</button>
+//     </>
+//   )
+// }
+// export default App;
+
+
+// second class 
+// import React, { useState } from 'react'
+
+// const App = () => {
+//   const [time,settime] = useState(new Date().toLocaleTimeString())
+//   const date = new Date().toLocaleDateString()
+
+//   setInterval(() => {
+//     settime(new Date().toLocaleTimeString())
+//   }, 1000);
+//   return (
+//     <>
+//       <h1>{time}</h1>
+//       <h1>{date}</h1>
+//     </>
+//   )
+// }
+
+// export default App;
+
+
+// third class = how to pass parameters in react
+
+// import React from 'react'
+
+// const App = () => {
+//   const [username, setusername] = React.useState("user");
+//   const userHandler = (n) => {
+//     setusername(n);
+//   }
+//   // const wrapper = () => {
+//   //   userHandler("user updated")
+//   // } 
+//   return (
+//     <>
+//       <h1>{username}</h1>
+//       <button className="bg-red-200" onClick={() => userHandler("user updated")}>update user</button>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+// fourth class = use form in react
+
+// import React from 'react'
+
+// const App = () => {
+//   const saveUser = (e) => {
+//     e.preventDefault();
+//     console.log(e.target.username.value);
+//   }
+//   return (
+//     <>
+//     <form onSubmit={saveUser}>
+//       <input type="text" name = "username" placeholder="username"/>
+//       <button type="submit" className='bg-blue-500'>Submit</button>
+//     </form>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+// fifth class = two-way binding
+
+// import { useState } from "react";
+
+// const App = () => {
+
+//   const [username, setUsername] = useState("");
+//   const [gender, setgender] = useState("female");
+//   const [city, setcity] = useState("bangalore");
+//   const [desc, setdesc] = useState("");
+//   const [accept, setaccept] = useState(true);
+
+//   const submitHandler = (e) => {
+//     e.preventDefault();
+//     console.log({username,gender,city,desc,accept});
+//   }
+//   console.log(accept)
+//   return (
+//     <>
+//       <form onSubmit={submitHandler}>
+//         <input value = {username} type="text" name='user' onChange = {(e) => setUsername(e.target.value)} placeholder="username"/>
+//         <input type="submit" />
+//         <br />
+//         <br />
+//         <input value = 'male' type="radio" name="gender"  onChange={(e) => setgender(e.target.value)} checked = {gender == 'male'?true:false} />male
+//         <input value = 'female' type="radio" name="gender" onChange={(e) => setgender(e.target.value)} checked = {gender == 'female'?true:false} />female
+//         <br /><br />
+//         <select name="city" value = {city} onChange={(e) => setcity(e.target.value)}>
+//           <option value="delhi">Delhi</option>
+//           <option value="mumbai">Mumbai</option>
+//           <option value="chennai">Chennai</option>
+//           <option value="bangalore">Bangalore</option>
+//         </select>
+//         <br /><br />
+//         <textarea value={desc} className="bg-blue-100" name="desc" onChange={(e) => setdesc(e.target.value)}></textarea>
+//         <br />
+//         <br />
+//         <input value={accept} type="checkbox" onChange={(e) => setaccept(!accept)} checked = {accept} />i accept all terms and conditions
+//       </form>
+//     </>
+//   )
+// }
+
+// export default App;
+
+
+// sixth class = render the data.
+
+// import { list } from "postcss";
+// import { useState } from "react";
+
+// const App = () => {
+//   const [users, setusers] = useState([])
+
+//   const [username, setUsername] = useState("");
+//   const [gender, setgender] = useState("female");
+//   const [city, setcity] = useState("bangalore");
+//   const [desc, setdesc] = useState("");
+//   const [accept, setaccept] = useState(true);
+
+//   const submitHandler = (e) => {
+//     e.preventDefault();
+//     const Newuser = {username,gender,city,desc,accept};
+//     const copyuser = [...users]
+//     copyuser.push(Newuser);
+//     setusers(copyuser);
+//     setUsername("");
+//     setgender("female");
+//     setcity("bangalore");
+//     setdesc("");
+//     setaccept(true);
+//   }
+//   let userrender = 'nodata';
+//   if(users.length > 0) {
+//     userrender = users.map((user,i) => <li key={i}>{user.username}</li>)
+//   }
+//   return (
+//     <>
+//       <form onSubmit={submitHandler}>
+//         <input value = {username} type="text" name='user' onChange = {(e) => setUsername(e.target.value)} placeholder="username"/>
+//         <input type="submit" />
+//         <br />
+//         <br />
+//         <input value = 'male' type="radio" name="gender"  onChange={(e) => setgender(e.target.value)} checked = {gender == 'male'?true:false} />male
+//         <input value = 'female' type="radio" name="gender" onChange={(e) => setgender(e.target.value)} checked = {gender == 'female'?true:false} />female
+//         <br /><br />
+//         <select name="city" value = {city} onChange={(e) => setcity(e.target.value)}>
+//           <option value="delhi">Delhi</option>
+//           <option value="mumbai">Mumbai</option>
+//           <option value="chennai">Chennai</option>
+//           <option value="bangalore">Bangalore</option>
+//         </select>
+//         <br /><br />
+//         <textarea value={desc} className="bg-blue-100" name="desc" onChange={(e) => setdesc(e.target.value)}></textarea>
+//         <br />
+//         <br />
+//         <input value={accept} type="checkbox" onChange={(e) => setaccept(!accept)} checked = {accept} />i accept all terms and conditions
+//       </form>
+//       <hr /><hr />
+//         <ol>{userrender}</ol>
+//     </>
+//   )
+// }
+
+// export default App;
+
