@@ -45,7 +45,7 @@
 //       <button type="submit">submit</button>
 //     </form>
 //   </div>
-  
+
 //    );
 // }
 // export default App;
@@ -293,3 +293,44 @@
 
 // export default App;
 
+
+//seven class = context api - 1st.
+
+// import React, { createContext, useState } from 'react'
+// import Comp1 from './components/Comp1'
+// import Comp2 from './components/Comp2'
+
+// export const DataContext = createContext(null);
+
+// const App = () => {
+//   const [data, setdata] = useState("API context data");
+
+
+//   return <DataContext.Provider value={[data, setdata]}>
+//       <>
+//         <h1>App Component</h1>
+//         <Comp1 />
+//         <Comp2 />
+//       </>
+//       </DataContext.Provider>
+// }
+
+//       export default App
+
+//eight class = context api - 2st.
+
+// import Comp1 from './components/Comp1'
+import Comp2 from './components/Comp2'
+
+
+const App = () => {
+  return (
+      <>
+        <h1>App Component</h1>
+        {/* <Comp1 /> */}
+        <Comp2 />
+      </>
+  )
+}
+
+      export default App
