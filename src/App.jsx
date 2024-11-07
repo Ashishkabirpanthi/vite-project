@@ -320,26 +320,45 @@
 //eight class = context api - 2st.
 
 // import Comp1 from './components/Comp1'
-// 
+// nine - routing,link,navlink
+
+// import React from 'react'
+// import { Route, Routes, Link, NavLink } from 'react-router-dom'
+// import Home from './components/Home'
+// import About from './components/About'
+// import Product from './components/Product'
+
+// const App = () => {
+//   return (
+//     <div>
+//       <nav >
+//         <NavLink to="" className={({ isActive }) => isActive ? "bg-red-600" : "bg-red-200"}>Home</NavLink>
+//         <NavLink to="/about" className={({ isActive }) => isActive ? "bg-red-600" : "bg-red-200"}>About</NavLink>
+//         <NavLink to="/product"className={({ isActive }) => isActive ? "bg-red-600" : "bg-red-200"}>Product</NavLink>
+//       </nav>
+//       <Routes>
+//         <Route path="/" element={<Home/>}/>
+//         <Route path="/about" element={<About/>}/>
+//         <Route path="/product" element={<Product/>}/>
+//       </Routes>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+//ten class = redux tool kit.
+
 import React from 'react'
-import { Route, Routes, Link, NavLink } from 'react-router-dom'
-import Home from './components/Home'
-import About from './components/About'
-import Product from './components/Product'
+import { useSelector } from 'react-redux'
 
 const App = () => {
+  const state = useSelector((state) => state.counter);
+  console.log(state)
   return (
     <div>
-      <nav >
-        <NavLink to="" className={({ isActive }) => isActive ? "bg-red-600" : "bg-red-200"}>Home</NavLink>
-        <NavLink to="/about" className={({ isActive }) => isActive ? "bg-red-600" : "bg-red-200"}>About</NavLink>
-        <NavLink to="/product"className={({ isActive }) => isActive ? "bg-red-600" : "bg-red-200"}>Product</NavLink>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/product" element={<Product/>}/>
-      </Routes>
+      <h1>{state.value}</h1>
     </div>
   )
 }
