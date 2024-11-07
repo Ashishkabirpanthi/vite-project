@@ -320,17 +320,28 @@
 //eight class = context api - 2st.
 
 // import Comp1 from './components/Comp1'
-import Comp2 from './components/Comp2'
-
+// 
+import React from 'react'
+import { Route, Routes, Link, NavLink } from 'react-router-dom'
+import Home from './components/Home'
+import About from './components/About'
+import Product from './components/Product'
 
 const App = () => {
   return (
-      <>
-        <h1>App Component</h1>
-        {/* <Comp1 /> */}
-        <Comp2 />
-      </>
+    <div>
+      <nav >
+        <NavLink to="" className={({ isActive }) => isActive ? "bg-red-600" : "bg-red-200"}>Home</NavLink>
+        <NavLink to="/about" className={({ isActive }) => isActive ? "bg-red-600" : "bg-red-200"}>About</NavLink>
+        <NavLink to="/product"className={({ isActive }) => isActive ? "bg-red-600" : "bg-red-200"}>Product</NavLink>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/product" element={<Product/>}/>
+      </Routes>
+    </div>
   )
 }
 
-      export default App
+export default App

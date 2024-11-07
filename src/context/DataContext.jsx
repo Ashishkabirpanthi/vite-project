@@ -1,15 +1,15 @@
-import React, { createContext, useState } from 'react'
+// import React, { createContext, useState } from 'react'
 
-export const DataContext = createContext(null);
+// export const DataContext = createContext(null);
 
-const Datacontext = (props) => {
-  const [data, setdata] = useState("API context data");
-  return <DataContext.Provider value={[data, setdata]}>(
-    <div>
-        {props.children}
-    </div>
-  )
-  </DataContext.Provider>
-}
+// const Datacontext = (props) => {
+//   const [data, setdata] = useState("API context data");
+//   return <DataContext.Provider value={[data, setdata]}>(
+//     <div>
+//         {props.children}
+//     </div>
+//   )
+//   </DataContext.Provider>
+// }
 
-export default Datacontext;
+// export default Datacontext;
